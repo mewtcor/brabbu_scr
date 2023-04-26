@@ -1,0 +1,100 @@
+{
+    "initial_url": "https://www.brabbu.com/home/",
+    "supplier_name": "brabbu",
+    "config_links": {
+        "initial_page_xpath": {
+            "xpath": "//div[@class='main-nav-header']//li[1]//div[@class='row']/div[9]/a[1]"
+        },
+        "category1": {
+            "xpath": ""
+        },
+        "category2": {
+            "xpath": ""
+        },
+        "products": {
+            "xpath": "//div[@id='guide-template']//div[@class='prod-img']/a"
+        },
+        "next_page": {
+            "xpath": "//button[contains(.,'Load More')]"
+        }
+    },
+    "config_others": {
+        "view_all": {
+            "xpath": ""
+        },
+        "variants_flag": {
+            "xpath": ""
+        },
+        "variants": {
+            "xpath": ""
+        }
+    },
+    "config_products": {
+        "product_code": {
+            "xpath": "//h4[@class='mb-0'] | //p[@class='title-cat pull-left']"
+        },
+        "product_name": {
+            "xpath": "//h4[@class='mb-0'] | //p[@class='title-cat pull-left']"
+        },
+        "category1": {
+            "xpath": ""
+        },
+        "category2": {
+            "xpath": ""
+        },
+        "description": {
+            "xpath": "//div[@class='description-product'] | //div[@class='product-description mb-2']/p"
+        },
+        "image1": {
+            "xpath": "//div[@class='prodSlider marginBottom slick-initialized slick-slider']//div[@class='slick-track']/div[1]//a/img | //div[@id='slickPreviewNav']//div[@class='slick-track']/div[1]//img"
+        },
+        "image2": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@id='carousel-1']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide slick-active']//img"
+        },
+        "image3": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='2']//img"
+        },
+        "image4": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='3']//img"
+        },
+        "image5": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='4']//img"
+        },
+        "image6": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='5']//img"
+        },
+        "image7": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='6']//img"
+        },
+        "image8": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='7']//img"
+        },
+        "image9": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='8']//img"
+        },
+        "image10": {
+            "xpath": "//div[@class='prodThumbsSlider slick-initialized slick-slider']//div[@class='slick-track']/div[@id='carousel-2']//img | //div[@id='slickPreviewNav']//div[@class='slick-track']//div[@class='slick-slide'][@data-slick-index='9']//img"
+        },
+        "image": {
+            "xpath": ""
+        },
+        "video": {
+            "xpath": "//div[@class='highlights-product'] | //div[@class='row embed-responsive embed-responsive-67by9 youtube-container']/iframe"
+        }
+    },
+    "variants":{
+        "variant1":"",
+        "variant2": "",
+        "variant_label1": "",
+        "variant_label2": "",
+        "swatch_image1": "",
+        "swatch_image2": ""
+    },
+    "custom_attributes": {
+        "width": "//div[@class='highlights-product']//text()[contains(.,'Width')] | //div[@class='highlights-product']//text()[contains(.,'WIDTH')] | //div[@class='highlights-product']//text()[contains(.,'width')] | //div[@id='pills-home']//p[contains(.,'Width')]",
+        "depth": "//div[@class='highlights-product']//text()[contains(.,'Width')] | //div[@class='highlights-product']//text()[contains(.,'WIDTH')] | //div[@class='highlights-product']//text()[contains(.,'width')] | //div[@id='pills-home']//p[contains(.,'Depth')]",
+        "height": "//div[@class='highlights-product']//text()[contains(.,'Width')] | //div[@class='highlights-product']//text()[contains(.,'WIDTH')] | //div[@class='highlights-product']//text()[contains(.,'width')] | //div[@id='pills-home']//p[contains(.,'Height')]",
+        "materials_and_dimensions": "//div[@class='highlights-product'] | //div[@id='pills-home']//p[contains(.,'MATERIALS')]/parent::span",
+        "availability": "//span[@class='is-in-stock'] | //b[contains(.,'LEAD TIME')] | //div[contains(text(),'In Stock')] | //div[@class='stock-product col-md-6 col-sm-6 col-xs-6 nospace']"
+    }
+}
