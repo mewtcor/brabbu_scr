@@ -25,14 +25,14 @@ tmp_swatch_image2 = ""
 # -------------- USER INPUT
 # un = "customer"
 # pw = "123456"
-filename = 'brabbu-softgoods'
+filename = 'brabbu-softgoods_pillows3'
 
 test1 = "" # no variant
 test2 = "" # 1 row variants
 TEST_URLS = [test1]
 TEST_MODE = False
 
-with open('config_template2.json', 'r') as f:
+with open('config_softgoods_pillows.json', 'r') as f:
     config_json = json.load(f)
     #----------------------- links
     initial_url = (config_json['initial_url'])
@@ -69,6 +69,7 @@ with open('config_template2.json', 'r') as f:
     # swatch_image2_xpath = (config_json['custom_attributes']['swatch_image2'])
     video_xpath = (config_json['config_products']['video']['xpath'])
     availability_xpath = (config_json['custom_attributes']['availability'])
+    materials_and_dimensions_xpath = (config_json['custom_attributes']['materials_and_dimensions'])
     # ------- custome attributes
     custom_attributes = config_json['custom_attributes']
 
@@ -216,7 +217,7 @@ def get_prod_urls(xpath, cat1, cat2):
 def pagination(cat1, cat2):
     count = 0
     next_page_x = next_page_xpath
-    while count < 6:
+    while count < 7:
         try:
             # Check whether nextPage_xpath exists
             nextPage_elem = driver.find_element(By.XPATH, next_page_x)
@@ -234,7 +235,7 @@ def pagination(cat1, cat2):
             sleep(2)
             get_prod_urls(prod_links_xpath, cat1, cat2)
             count += 1
-        except NoSuchElementException:
+        except:
             # If nextPage_xpath does not exist, break out of the loop
             break
 
@@ -323,7 +324,7 @@ def extract_data(cat1, cat2):
         description = get_element_attribute(description_xpath, "innerHTML")
         video = get_element_attribute(video_xpath, "src")
         availability = get_element_attribute(availability_xpath, "textContent").strip()
-        print(availability)
+        materials_and_dimensions = get_element_attribute(materials_and_dimensions_xpath, "innerHTML")
         supplier = supplier_name
         #variants
         # variant1 = get_element_attribute(variant1_xpath, "textContent")
@@ -356,6 +357,7 @@ def extract_data(cat1, cat2):
             'imageUrl10': image10,
             'video': video,
             'availability': availability,
+            'materials_and_dimensions': materials_and_dimensions,
             'pageUrl': pageUrl,
             'scrape_date': scrape_date,
             'supplier': supplier

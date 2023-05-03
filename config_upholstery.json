@@ -3,7 +3,7 @@
     "supplier_name": "brabbu",
     "config_links": {
         "initial_page_xpath": {
-            "xpath": "//div[@class='main-nav-header']//li[1]//div[@class='row']/div[9]/a[1]"
+            "xpath": "//div[@class='main-nav-header']//li[1]//div[@class='row']/div[3]/div[@class='menuSubTitle']/a[not(normalize-space()='Sofas')]"
         },
         "category1": {
             "xpath": ""
@@ -43,7 +43,7 @@
             "xpath": ""
         },
         "description": {
-            "xpath": "//div[@class='description-product'] | //div[@class='product-description mb-2']/p"
+            "xpath": "//div[@class='description-product'] | //div[@class='product-description mb-2']"
         },
         "image1": {
             "xpath": "//div[@class='prodSlider marginBottom slick-initialized slick-slider']//div[@class='slick-track']/div[1]//a/img | //div[@id='slickPreviewNav']//div[@class='slick-track']/div[1]//img"
@@ -79,7 +79,7 @@
             "xpath": ""
         },
         "video": {
-            "xpath": "//div[@class='highlights-product'] | //div[@class='row embed-responsive embed-responsive-67by9 youtube-container']/iframe"
+            "xpath": "//div[@class='row embed-responsive embed-responsive-67by9 youtube-container']/iframe | //div[@id='prodVideo']/iframe"
         }
     },
     "variants":{
@@ -94,7 +94,7 @@
         "width": "//div[@class='highlights-product']//text()[contains(.,'Width')] | //div[@class='highlights-product']//text()[contains(.,'WIDTH')] | //div[@class='highlights-product']//text()[contains(.,'width')] | //div[@id='pills-home']//p[contains(.,'Width')]",
         "depth": "//div[@class='highlights-product']//text()[contains(.,'Width')] | //div[@class='highlights-product']//text()[contains(.,'WIDTH')] | //div[@class='highlights-product']//text()[contains(.,'width')] | //div[@id='pills-home']//p[contains(.,'Depth')]",
         "height": "//div[@class='highlights-product']//text()[contains(.,'Width')] | //div[@class='highlights-product']//text()[contains(.,'WIDTH')] | //div[@class='highlights-product']//text()[contains(.,'width')] | //div[@id='pills-home']//p[contains(.,'Height')]",
-        "materials_and_dimensions": "//div[@class='highlights-product'] | //div[@id='pills-home']//p[contains(.,'MATERIALS')]/parent::span",
+        "materials_and_dimensions": "//div[@class='highlights-product'] | //div[@id='pills-home']//p[contains(.,'MATERIALS')]/parent::span | //div[@id='pills-home']//span[contains(.,'MATERIALS')]/parent::div",
         "availability": "//span[@class='is-in-stock'] | //b[contains(.,'LEAD TIME')] | //div[contains(text(),'In Stock')] | //div[@class='stock-product col-md-6 col-sm-6 col-xs-6 nospace']"
     }
 }

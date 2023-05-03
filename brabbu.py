@@ -25,14 +25,14 @@ tmp_swatch_image2 = ""
 # -------------- USER INPUT
 # un = "customer"
 # pw = "123456"
-filename = 'brabbu-fireplaces'
+filename = 'brabbu-fireplaces3'
 
-test1 = "" # no variant
-test2 = "" # 1 row variants
-TEST_URLS = [test1]
+test1 = "https://www.brabbu.com/product/pillows/flora-blush/classic/" # no variant
+test2 = "https://www.brabbu.com/home/product/casegoods/agra/dining-table" # 1 row variants
+TEST_URLS = [test1, test2]
 TEST_MODE = False
 
-with open('config_template.json', 'r') as f:
+with open('config_fireplaces.json', 'r') as f:
     config_json = json.load(f)
     #----------------------- links
     initial_url = (config_json['initial_url'])
@@ -68,7 +68,8 @@ with open('config_template.json', 'r') as f:
     # swatch_image1_xpath = (config_json['custom_attributes']['swatch_image1'])
     # swatch_image2_xpath = (config_json['custom_attributes']['swatch_image2'])
     video_xpath = (config_json['config_products']['video']['xpath'])
-    availability_xpath = (config_json['custom_attributes']['availability']).strip()
+    availability_xpath = (config_json['custom_attributes']['availability'])
+    materials_and_dimensions_xpath = (config_json['custom_attributes']['materials_and_dimensions'])
     # ------- custome attributes
     custom_attributes = config_json['custom_attributes']
 
@@ -133,7 +134,7 @@ def get_category_links():
     for url in category1_urls:
         logging.debug(f'Scraping category URL: {url[0]} | cat1: {url[1]}')
         driver.get(url[0])
-        sleep(3)
+        sleep(1)
         tmp_cat2 = url[1]
         current_url = driver.current_url
         pattern = r'([^/]+)(?=/[^/]+$)'
@@ -220,7 +221,7 @@ def pagination(cat1, cat2):
             nextPage_elem.click()
             sleep(2)
             get_prod_urls(prod_links_xpath, cat1, cat2)
-        except NoSuchElementException:
+        except:
             # If nextPage_xpath does not exist, break out of the loop
             break
 
@@ -308,7 +309,8 @@ def extract_data(cat1, cat2):
         image10 = get_element_attribute(image10_xpath, "src")
         description = get_element_attribute(description_xpath, "innerHTML")
         video = get_element_attribute(video_xpath, "src")
-        availability = get_element_attribute(availability_xpath, "textContent")
+        availability = get_element_attribute(availability_xpath, "textContent").strip()
+        materials_and_dimensions = get_element_attribute(materials_and_dimensions_xpath, "innerHTML")
         supplier = supplier_name
         #variants
         # variant1 = get_element_attribute(variant1_xpath, "textContent")
@@ -341,6 +343,7 @@ def extract_data(cat1, cat2):
             'imageUrl10': image10,
             'video': video,
             'availability': availability,
+            'materials_and_dimensions': materials_and_dimensions,
             'pageUrl': pageUrl,
             'scrape_date': scrape_date,
             'supplier': supplier
